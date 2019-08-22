@@ -1,10 +1,7 @@
-# test repository
-This is a repository for testing.
+# Recommendation Systems for Online Grocerie Shopping
 
-Hoi, dit is Skye.
+This reopsitory comprises files for the course project.
 
-Today is August 21st.
+The .tex file is the final report.
 
-Let's see what have changed here
-
-Seem's like nothing has changed.
+The jupyther notebook file is the EDA
