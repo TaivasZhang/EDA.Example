@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[1]:
 
 
 import pandas as pd
@@ -12,21 +12,21 @@ import seaborn as sns
 import matplotlib as mpl 
 
 
-# In[7]:
+# In[2]:
 
 
 plt.rcParams['figure.figsize'] = (16, 9)
 plt.rcParams['figure.dpi'] = 300
 
 
-# In[1]:
+# In[3]:
 
 
 original_data = pd.read_csv('reviews_merged.csv', encoding='gbk')
 original_data.head(5)
 
 
-# In[2]:
+# In[4]:
 
 
 # Change string to dictionary
@@ -35,7 +35,7 @@ most_asin = original_data['title'].tolist()
 most_asin
 
 
-# In[4]:
+# In[5]:
 
 
 # Get the mean price of each asin and fillin the empty data
@@ -46,7 +46,7 @@ for asin in diffasin:
     meanprice.append(original_data[original_data['asin']  == asin]['price'].mean())
 
 
-# In[8]:
+# In[6]:
 
 
 meanpriceint = []
@@ -58,7 +58,7 @@ while 0 in meanpriceint:
     meanpriceint.remove(0)
 
 
-# In[17]:
+# In[7]:
 
 
 mpl.rc("figure", figsize=(16,9))  
@@ -68,13 +68,13 @@ plt.savefig('meanprice_hist.png',  bbox_inches = 'tight')
 plt.show()
 
 
-# In[11]:
+# In[8]:
 
 
 original_data['title'].value_counts()
 
 
-# In[12]:
+# In[9]:
 
 
 # Mean overall of each reviewer
@@ -84,7 +84,7 @@ for reviewerID in diffreviewerID:
     meanstar.append(original_data[original_data['reviewerID']  == reviewerID]['overall'].mean())
 
 
-# In[16]:
+# In[10]:
 
 
 mpl.rc("figure", figsize=(16,9)) 
@@ -94,7 +94,7 @@ plt.savefig('meanstar_hist.png', bbox_inches = 'tight')
 plt.show()
 
 
-# In[18]:
+# In[11]:
 
 
 # Word Cloud
@@ -108,7 +108,7 @@ for word in reviewtext:
         text_word.append(each)
 
 
-# In[19]:
+# In[12]:
 
 
 # Plot the wordcloud
@@ -127,7 +127,7 @@ wordcloud.to_file('review_text.png')
 plt.show()
 
 
-# In[60]:
+# In[13]:
 
 
 from collections import Counter
@@ -164,7 +164,7 @@ plt.xlabel('Product Names', fontsize=12)
 plt.savefig('reviewfreq.png', bbox_inches = 'tight')
 
 
-# In[35]:
+# In[14]:
 
 
 # Transform helpful to numerical and calculate the ratio
@@ -184,7 +184,7 @@ for i in range(len(HaveSeen)):
 print(helpful_rate)
 
 
-# In[38]:
+# In[15]:
 
 
 mpl.rc("figure", figsize=(16,9)) 
@@ -195,7 +195,7 @@ plt.savefig('helpfulrate_hist_5.png')
 plt.show()
 
 
-# In[39]:
+# In[16]:
 
 
 # Use the summary to do a sentiment analysis
@@ -208,7 +208,7 @@ for text in summary:
     score.append(blob.sentiment.polarity)
 
 
-# In[45]:
+# In[17]:
 
 
 # calculate the mean senitment score of each product
@@ -222,7 +222,7 @@ for i in keyname:
     meanscore.update({i :eachmeanscore})
 
 
-# In[56]:
+# In[18]:
 
 
 # Randomly select 30 products in asin and check the score
@@ -236,7 +236,7 @@ for i in sample_keyname:
     b.append(meanscore[i])
 
 
-# In[61]:
+# In[18]:
 
 
 # Plot the scores of the selected product
