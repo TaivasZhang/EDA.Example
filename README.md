@@ -1,7 +1,5 @@
-# Recommendation Systems for Online Grocerie Shopping
+# An Example of Exploratory Data Analysis
 
-This reopsitory comprises files for the course project.
+This reopsitory demonstrates the exploratory data analysis (EDA) process of a recommendation engine.
 
-The .tex file is the final report.
 
-The jupyther notebook file is the EDA
